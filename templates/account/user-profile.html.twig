@@ -1,0 +1,32 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+    {{ title }}
+{% endblock %}
+
+{% block body %}
+
+    <h1>{{ page_heading }}</h1>
+
+    {{ form_errors(upForm) }}
+
+    {{ form_start(upForm, { 'attr' : { 'id': 'accountForm', 'action' : path('app_account_info') } }) }}
+        {{ form_row(upForm.first_name) }}
+        {{ form_row(upForm.last_name) }}
+        {{ form_row(upForm.address) }}
+        {{ form_row(upForm.birth_date) }}
+        {{ form_row(upForm.about) }}
+        <button type="submit" class="btn">Update</button>
+    {{ form_end(upForm) }}
+
+    <div class="ajaxResponce">
+    </div>
+
+    <div style="margin-top: 50px;">
+        <a href="{{ path('app_home') }}">Home Page</a>
+    </div>
+    <div style="margin-top: 10px;">
+        <a href="{{ path('app_logout') }}">Logout</a>
+    </div>
+
+{% endblock %}

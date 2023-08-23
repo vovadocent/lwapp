@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+    {{ title }}
+{% endblock %}
+
+{% block body %}
+    <h1>{{ page_heading }}</h1>
+    <p>{{ page_text }}</p>
+
+    <div style="margin-top: 50px;">
+        <a href="{{ path('app_account') }}">User Profile</a>
+    </div>
+    
+{% endblock %}
